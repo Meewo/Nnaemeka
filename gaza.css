@@ -1,0 +1,1992 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: var(--body-color);
+}
+:root{
+    --body-color: #000000;
+    --header-color: #000000;
+    --header-name: #ffffff;
+    --header-links-color: #00ffcc;
+    --header-links-about:#00ffcc;
+    --abum-color: #fff;
+    --abum-sentence: #d6d5e2;
+    --abum-link-hover: #464647;
+    --first-triad-container: #034d3e;
+    --h2-specialization: #fff;
+    --specialization: #07a081;
+    --specialization-hover: #f0f8ff;
+    --interested: #0a677e;
+    --footer-color: #ffffff;
+    --drop-buttons: #00ffcc;
+    --mobile-nav-bg: #05725c;
+    --mobile-nav: #eeff00;
+    --mobile-nav-links-visited: #000000;
+}
+.light-theme{
+    --body-color: #fff;
+    /* --body-color: #cdcde0; */
+    --header-color: #ffffff;
+    --header-name: #000000;
+    --header-links-color: #000000;
+    --header-links-about:#000;
+    --abum-color: #000;
+    --abum-sentence: #000;
+    --abum-link-hover: #000;
+    --first-triad-container: #043946;
+    --h2-specialization: #02022c;
+    --specialization: #f30186;
+    --specialization-hover: #04473b;
+    --interested: #042e21;
+    --footer-color: #010116;
+    --drop-buttons: #1f2b51;
+    --mobile-nav-bg: #000;
+    --mobile-nav: #0ebbbb;
+    --mobile-nav-links-visited: #ffffff;
+}
+.header{
+    background-color: var(--header-color);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+    animation: headeranimation 3s linear;
+}
+
+
+/* KEYFRAMES FOR HEADER ANIMATION */
+@keyframes headeranimation {
+    0%{
+        transform: translateY(-80px);
+        opacity: 0;
+    }
+    100%{
+        transform: translateY(0);
+        opacity: 1;
+    }
+}
+/* THE GENERAL UTILITY AREA FOR HEADER ANIMATION UNDER VARIOUS WEBPAFGES */
+.headeranimation{
+    animation: headeranimation 3s linear;}
+.header-name{
+    color: var(--header-name);
+    font-size: 0.87rem;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+
+}
+.header-links{
+    position: absolute;
+    top: 40px;
+    left: 450px;
+}
+.header-links a{
+    color: var(--header-links-color);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 50px;
+    font-weight: bold;
+}
+.header-links :last-child{
+    margin-right: 0;
+}
+#icon{
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 330px;
+}
+#icon:hover{
+    height: 19px;
+}
+.header-contact{
+    font-size: 1.1rem;
+    position: absolute;
+    top: 40px;
+    right: 200px;
+}
+.header-contact a{
+    color: var(--header-links-color);
+    text-decoration: none;
+    border: 2px solid black;
+    padding: 10px;
+    border-radius: 50%;
+    font-weight: bold;
+}
+.header-contact:hover{
+    scale: 0.9;
+    transition: 0.5s;
+}
+
+.mobile-header{
+    display: none;
+}
+
+
+
+/* MOBILE NAVIGATION BAR */
+.nav{
+    display: none;
+    width: 100vw;
+    position: fixed;
+    bottom: 20px;
+    transition: 0.5s ease-in-out;
+}
+.nav-links{
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--body-color);
+    border: 2px solid var(--header-name);
+    padding: 10px;
+    margin: 0 20px;
+}
+.nav-links a i{
+    color: var(--mobile-nav);
+    background-color: var(--mobile-nav-bg);
+    padding:10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 0;
+}
+
+/* IMMEDIATE SECTION AFTER THE HEADER [THE HERO SECTION] */
+.hero-container{
+    display: flex;
+    width: 60%;
+    margin: 130px auto 0;
+    opacity: 0;
+    transform: translateX(100px);
+    transition: transform 3s ease-in, opacity 5s ease-out;
+}
+
+/* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+.animate-home-hero{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+.hero-name{
+    text-align: center;
+    color: var(--abum-sentence);
+    width: 100%;
+    margin-right: 100px;
+    margin-top: 250px;
+}
+.hero-name h3{
+    color: var(--abum-color);
+    font-size: 1.875rem;
+}
+.hero-name h2{
+    font-size: 2rem;
+    color: var(--abum-color);
+    margin: 10px 0;
+}
+.hero-name :nth-child(3){
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-family: cursive;
+    font-size: 1.07rem;
+}
+.hero-name :nth-child(4){
+    font-size: 1rem;
+    margin: 10px 0 30px;
+}
+.hero-name-links a{
+    text-decoration: none;
+    color: var(--abum-sentence);
+    padding: 10px;
+    border: 2px solid #000;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    transition: 0.5s all ease-in-out;
+}
+.hero-name-links a:hover{
+    padding: 5px;
+}
+.hero-name-links :nth-child(1){
+    margin-right: 20px;
+}
+.hero-img{
+    width: 100%;
+    margin-right: -100px;
+}
+.hero-img img{
+    width: 400px;
+    border-radius: 1.5rem;
+}
+
+
+
+
+
+
+
+
+
+/* FIRST TRIAD SECTION */
+.first-triad-container{
+    background-color: var(--first-triad-container);
+}
+.first-triad{
+    width: 80%;
+    margin: 0 auto 0;
+    padding: 100px 0 50px;
+    display: flex;
+    justify-content: space-evenly;
+    opacity: 0;
+    transform: translateX(-50vw);
+    transition: transform 3s, opacity 5s;
+   
+}
+.first-triad :hover{
+    scale: 0.8;
+}
+
+
+.animate_triad{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+.triads{
+    width: 280px;
+    padding: 10px;
+    border: 2px solid #777474;
+    box-shadow: 2px 2px 1px 1px #777474;
+    text-align: center;
+    line-height: 1.5;
+    transition: 1s ease-in-out;
+}
+.triads i{
+    margin-top: 50px;
+    color: white;
+}
+.triads i:hover{
+    scale: 1;
+}
+.triads h2{
+    color: #ced7e0;
+    margin: 10px 0;
+    font-size: 1.4rem;
+}
+.triads p{
+    color: hsl(195, 100%, 93%);
+}
+.triads :hover{
+    scale: 1;
+}
+
+
+/* MY SPECIALIZATION SECTION */
+#h2-specialization{
+    color: var(--h2-specialization);
+    text-align: center;
+    margin: 50px 0 20px ;
+    font-size: 1.7rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.specialization-container{
+    align-items: center;
+}
+.first-specialization, .second-specialization{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+/* THE ANIMATION FOR FIRST AND SECOND SPECIALISATION RESPECTIVELY */
+.first-specialization{
+    opacity: 0;
+    transform: scale(0.5);
+    transition: transform 3s, opacity 9s ;
+}
+
+/* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+.animate_specialisation_one{
+    opacity: 1;
+    transform: none;
+}
+
+
+.second-specialization{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 3s linear;
+}
+
+/* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+.animate_specialisation_two{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+.specializations{
+    height: 130px;
+    width: 130px;
+    margin: 8px;
+    border: 1px solid var(--specialization);
+    box-shadow: 2px 2px 1px 1px var(--specialization);
+    display: flex;
+    align-items: center;
+    flex-wrap: wrap;
+    justify-content: center;
+    font-size: 1.125rem;
+    font-weight: 600;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: #ffffff;
+}
+.specializations:hover{
+    border: 1px solid var(--specialization-hover);
+    box-shadow: 2px 2px 1px 1px var(--specialization-hover);
+}
+.html{
+    background-color: darkgoldenrod;
+}
+.css{
+    background-color: #a17e49;
+}
+.js{
+    background-color: #7a7200;
+}
+.python{
+    background-color: darkolivegreen;
+}
+.git{
+    background-color: darkred;
+}
+.word{
+    background-color: darkslateblue;
+}
+.mobile{
+    display: none;
+}
+
+/* INTERESTED WITH ME SECTION */
+.interested{
+    padding: 20px 0;
+    background-color: var(--interested);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin: 80px 0;
+    opacity: 0;
+    transition: opacity 3s linear;
+}
+
+
+/* THE CLASS BELOW IS THE CLASSLIST ADDED IN THE JAVASCRIPT */
+.animate-interest{
+    opacity: 1;
+}
+
+
+
+.interested h2{
+    font-size: 35px;
+    color: #e0e5e9;
+    margin-right: 50px;
+}
+.interested button{
+    padding: 20px;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    border: none;
+    border-bottom: 2px #f80b03;
+    box-shadow: 0 5px 0 0 #f80b03;
+}
+.interested button:hover{
+    scale: 0.8;
+}
+.interested button a{
+    text-decoration: none;
+    color: #000;
+}
+
+
+/* CONCERNING SECTION */
+.concern-container{
+    color: var(--header-name);
+    width: 55%;
+    margin: 0 auto;
+}
+.concern-container h2{
+    text-align: center;
+    margin-bottom: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.concern-box{
+    text-align: center;
+    border: 2px solid var(--header-name);
+    box-shadow: 0 2px 1px 0 var(--header-name);
+    margin-bottom: 30px;
+    padding: 40px;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 3s linear, opacity 7s;
+}
+
+/* THE CLASS BELOW IS THE CLASSLIST CREATED IN THE JAVASCRIPT FOR THE ANIMATION */
+.concern-imgs{
+    /* THERE IS ANOTHER TARGET OF THIS CLASS DOWNWARDS WHICH PERFORMED THE DESIN WORKS THIS IMEADIATE ONE IS SOLEY FOR ANIMATION.
+    I DON'T WANT TO COMBINE THE PROPERTIES BEACUSE THE ANIMATION ONES NEEDS TO COME FIRST IN THE BRACE BEFORE PROPER FUNCTIONING.
+    MEANWHILE, I CAN STILL COPY THE PROPERTIES OF THE SECOND TARGET AND PUT UNDER THE PROPERTIESOF THIS IMMEDIATE TARGET */
+    opacity: 0;
+    /* transform: translateY(100px); */
+    transition: opacity 7s;
+}
+.animate_concern{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+.concern-box p{
+    margin: 30px 0;
+    line-height: 1.5;
+    font-size: 1.18rem;
+}
+.concern-box h3{
+    font-size: 1.5rem;
+    font-family: Arial, Helvetica, sans-serif;
+    margin-bottom: 10px;
+}
+.concern-imgs{
+    display: flex;
+    justify-content: center;
+}
+.concern-pic{
+    width: 60px;
+    border-radius: 50%;
+}
+.concern-imgs :nth-child(1){
+    border: 3px solid var(--header-links-color);
+    padding: 5px;
+    margin-right: 20px;
+}
+
+
+/* FOOTER SECTION */
+footer{
+    width: 75%;
+    margin: 100px auto 120px;
+    display: flex;
+    justify-content: space-between;
+    color: var(--footer-color);
+}
+footer h6{
+    font-size: 20px;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.footer-icons a{
+    color: var(--footer-color);
+}
+.footer-icons :nth-child(1){
+    margin-right: 10px;
+}
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++MOBILE SCREEN FOR THE HOMEPAGE +++++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width:600px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main{
+        margin: 0 5px;
+    }
+    .header{
+        display: none;
+    }
+
+
+
+    /* MOBILE HEADER */
+    .mobile-header{
+        display: block;
+    }
+    .mobile-header-name{
+        position: absolute;
+        top: 20px;
+        left: 10px;
+    }
+    .mobile-header-name h1{
+        font-size: 1.4rem;
+        color: var(--header-name);
+    }
+    #mobileicon{
+        height:28px;
+        position: absolute;
+        right: 10px;
+        top: 25px;
+    }
+    #mobileicon:hover{
+        scale: 0.8;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links{
+    width:90%;
+    }
+.nav-links a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+    /* IMMEDIATE SECTION AFTER THE HEADER [THE HEADER] */
+    .hero-container{
+        width: 100vw;
+        margin: 100px auto 0;
+        display: block;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: transform 3s ease-in, opacity 8s ease-out;
+}
+
+        /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+     .animate-home-hero{
+        opacity: 1;
+        transform: none;
+}
+    .hero-name{
+        width: 90%;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .hero-name h2{
+        font-size: 1.7rem;
+    }
+    .hero-name :nth-child(3){
+        font-size: 1.3rem;
+    }
+    .hero-name :nth-child(4){
+        font-size: 1.2rem;
+    }
+    .hero-img{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hero-img img{
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* FIRST TRIAD SECTION */
+    .first-triad-container{
+        height: auto;
+    }
+    .first-triad{
+        padding: 50px 0 30px;
+        display: block;
+    }
+    .first-triad :hover{
+        scale: 1;
+    }
+    .triads{
+        width: 280px;
+        height: 250px;
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+    }
+
+
+    /* MY SPECIALIZATION SECTION */
+    #h2-specialization{
+        font-size: 1.35rem;
+        text-align: center;
+        margin-bottom: 5px;
+    }
+    .specialization-container{
+        display: flex;
+        justify-content: center;
+    }
+    .first-specialization, .second-specialization{
+        display: block;
+    }
+
+    /* THE ANIMATION FOR FIRST AND SECOND SPECIALISATION RESPECTIVELY */
+    .first-specialization{
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 3s, opacity 9s ;
+    }
+    
+    /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+    .animate_specialisation_one{
+        opacity: 1;
+        transform: none;
+    }
+    
+    
+    .second-specialization{
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 3s, opacity 9s ;
+    }
+    
+    /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+    .animate_specialisation_two{
+        opacity: 1;
+        transform: none;
+    }
+
+
+    .specializations{
+        height: 8em;
+        width: 8rem;
+        margin-bottom: 0.5rem;
+        font-size: 1.1rem;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+
+    /* INTERESTED WORKING WITH ME SECTION */
+    .interested{
+        /* width: 60%; */
+        padding: 20px 5px;
+        margin: 50px 0;
+    }
+    .interested h2{
+        font-size: 1.4rem;
+        margin-right: 0.5rem;
+    }
+    .interested button{
+        padding: 10px;
+        height: auto;
+    }
+
+
+    /* CONCERNING SECTION */
+    .concern-container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .concern-container h2{
+        font-size: 1rem;
+    }
+    .concern-box{
+        padding: 10px 5px 0;
+    }
+    .concern-box p{
+        font-size: 1rem;
+    }
+    .concern-box h3{
+        font-size: 0.9rem;
+    }
+
+
+    /* FOOTER SECTION */
+    footer{
+        width: 90%;
+        margin: 100px auto;
+    }
+    footer h6{
+        font-size: 1.2rem;
+    }
+    .footer-icons :nth-child(1){
+        margin-right: 0.5rem;
+    }
+}
+
+
+
+
+
+/* ``````````````````````````````````````````````````TABLET SCREEN FOR HOMEPAGE```````````````````````````````````````````````` */
+@media only screen and (max-width:768px) and (min-width:601px) {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    main{
+        margin: 0 5px;
+    }
+    .header{
+        display: none;
+    }
+
+
+
+    /* MOBILE HEADER */
+    .mobile-header{
+        display: block;
+    }
+    .mobile-header-name{
+        position: absolute;
+        top: 15px;
+        left: 20px;
+    }
+    .mobile-header-name h1{
+        font-size: 2rem;
+        color: var(--header-name);
+    }
+    #mobileicon{
+        height:28px;
+        position: absolute;
+        right: 20px;
+        top: 25px;
+    }
+    #mobileicon:hover{
+        scale: 0.8;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links{
+    width: 95%;
+    /* margin: 0 auto; */
+    }
+.nav-links a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+    /* IMMEDIATE SECTION AFTER THE HEADER [THE HERO] */
+    .hero-container{
+        width: 100vw;
+        margin: 100px auto 0;
+        display: block;
+        opacity: 0;
+        transform: translateY(-100px);
+        transition: transform 3s ease-in, opacity 8s ease-out;
+}
+
+        /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+     .animate-home-hero{
+        opacity: 1;
+        transform: none;
+}
+    .hero-name{
+        /* width: 90%; */
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 30px;
+    }
+    .hero-name h3{
+        font-size: 2.9rem;
+    }
+    .hero-name h2{
+        font-size: 2.5rem;
+    }
+    .hero-name :nth-child(3){
+        font-size: 1.6rem;
+    }
+    .hero-name :nth-child(4){
+        font-size: 1.5rem;
+        line-height: 1.5;
+    }
+    .hero-name-links a{
+        font-size: 1.5rem;
+        font-weight: 600;
+    }
+    .hero-img{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .hero-img img{
+        width: 100%;
+        height: auto;
+    }
+
+
+    /* FIRST TRIAD SECTION */
+    .first-triad-container{
+        height: auto;
+    }
+    .first-triad{
+        padding: 50px 0 30px;
+        display: block;
+    }
+    .first-triad :hover{
+        scale: 1;
+    }
+    .triads{
+        width: auto;
+        height: auto;
+        margin-bottom: 20px;
+    }
+    .triads p{
+        font-size: 1.7rem;
+    }
+
+
+    /* MY SPECIALIZATION SECTION */
+    #h2-specialization{
+        font-size: 2.5rem;
+        text-align: center;
+        margin: 80px 0 10px;
+    }
+    .specialization-container{
+        display: flex;
+        justify-content: center;
+    }
+    .first-specialization, .second-specialization{
+        display: block;
+    }
+
+    /* THE ANIMATION FOR FIRST AND SECOND SPECIALISATION RESPECTIVELY */
+    .first-specialization{
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 3s, opacity 9s ;
+    }
+    
+    /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+    .animate_specialisation_one{
+        opacity: 1;
+        transform: none;
+    }
+    
+    
+    .second-specialization{
+        opacity: 0;
+        transform: scale(0.5);
+        transition: transform 3s, opacity 9s ;
+    }
+    
+    /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
+    .animate_specialisation_two{
+        opacity: 1;
+        transform: none;
+    }
+    .specializations{
+        height: 15rem;
+        width: 15rem;
+        margin-bottom: 8px;
+        font-size: 2rem;
+    }
+    .desktop{
+        display: none;
+    }
+    .mobile{
+        display: block;
+    }
+
+    /* INTERESTED WORKING WITH ME SECTION */
+    .interested{
+        padding: 20px 5px;
+        margin: 50px 0;
+    }
+    .interested h2{
+        font-size: 2.5rem;
+    }
+    .interested button{
+        padding: 12px;
+        height: auto;
+        font-size: 1.7rem;
+        font-weight: 550;
+        color: darkcyan;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    }
+    .interested button a{
+        color: var(--interested);
+    }
+
+
+    /* CONCERNING SECTION */
+    .concern-container{
+        width: 90%;
+        margin: 0 auto;
+    }
+    .concern-container h2{
+        font-size: 2.5rem;
+    }
+    .concern-box{
+        padding: 10px 5px 0;
+    }
+    .concern-box p{
+        font-size: 1.6rem;
+    }
+    .concern-box h3{
+        font-size: 1.7rem;
+    }
+
+
+    /* FOOTER SECTION */
+    footer{
+        width: 90%;
+        margin: 100px auto;
+    }
+    footer h6{
+        font-size: 1rem;
+    }
+    .footer-icons{
+        position: relative;
+        top: 10px;
+    }
+    .footer-icons :nth-child(1){
+        margin-right: 0.5rem;
+    }
+}
+
+
+
+
+
+/* ----------------------------------------------------------------ABOUT WEBPAGE-------------------------------------------------------- */
+
+.header-about{
+    background-color: var(--header-color);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.header-name{
+    color: var(--header-name);
+    font-size: 0.87rem;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+}
+.header-links-about{
+    position: absolute;
+    top: 40px;
+    left: 450px;
+}
+.header-links-about a{
+    color: var(--header-name);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 50px;
+    font-weight: bold;
+}
+.header-links-about :nth-child(2){
+    color: var(--header-links-about);
+}
+.header-links-about :last-child{
+    margin-right: 0;
+}
+#icon{
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 330px;
+}
+#icon:hover{
+    height: 19px;
+}
+.header-contact-about{
+    font-size: 1.1rem;
+    position: absolute;
+    top: 40px;
+    right: 200px;
+}
+.header-contact-about a{
+    color: var(--header-name);
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    font-weight: bold;
+}
+.header-contact-about:hover{
+    scale: 0.9;
+    transition: 0.5s;
+}
+
+
+
+/* MOBILE NAVIGATION BAR */
+.nav-about{
+    display: none;
+    width: 100vw;
+    position: fixed;
+    bottom: 20px;
+    transition: all 0.5s ease-in-out 0s;
+}
+.nav-links-about{
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--body-color);
+    border: 2px solid var(--header-name);
+    padding: 10px;
+    margin: 0 20px;
+}
+.nav-links-about a i{
+    color: var(--mobile-nav);
+    background-color: var(--mobile-nav-bg);
+    padding:10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 0;
+}
+.nav-links-about :nth-child(2) i{
+    background-color: var(--mobile-nav-links-visited);
+}
+
+
+
+/* HERO FOR THE ABOUT WEBPAGE */
+.about-hero-container{
+    width: 60%;
+    display: flex;
+    margin: 180px auto;
+
+    /* AN ANIMATION WITH THE KEYFRAME CLASS NAME 'header-animation' WAS ADDED IN THE HTML. IT IS THE ANIMATION OF THE HOME HEADER */
+}
+
+.about-hero-imgs{
+    width: 50%;
+    display: flex;
+
+}
+#single-img{
+    /* width: 200px; */
+    /* height:250px; */
+    height: 220px;
+    background-color: #0bb996;
+    padding-top: 30px;
+    position: relative;
+    top: 75px;
+    right: 15px;
+    border-radius: 20px 0;
+}
+.double-img img{
+    height: 180px;
+    border-radius: 1rem;
+}
+.double-img :nth-child(2){
+    margin-top: 5px;
+}
+    .about-hero-contents{
+    width:100%;
+    position: relative;
+    left: 100px;
+    color: var(--header-name);
+    text-align: center;
+    line-height: 1.5;
+}
+.hero-texts{
+    margin-bottom: 20px;
+}
+.hero-texts h1{
+    font-weight: bold;
+}
+.hero-texts p{
+    font-family: cursive;
+}
+
+
+/* THE DESCRIPTIONS */
+.dropbtn, .dropbtntwo, .dropbtnthree, .dropbtnfour{
+    cursor: pointer;
+    font-size: 1rem;
+    border: none;
+    color: var(--header-name);
+    font-weight: bold;
+    padding: 14px 16px;
+    width: 100%;
+    height: 50px;
+    margin-bottom: 20px;
+    background-color: inherit;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border: 2px solid var(--header-name);
+    box-shadow: 2px 2px 0 0;
+}
+.dropbtn i, .dropbtntwo i, .dropbtnthree i, .dropbtnfour i{
+    color: var(--drop-buttons);
+}
+.dropdown-content{
+    display: none;
+    background-color: #026451;
+    background-color: var(--body-color);
+    color: #fff;
+    color: var(--abum-sentence);
+    font-family: cursive;
+    font-size: 0.9rem;
+    padding: 20px 50px;
+    position: relative;
+    bottom: 30px;
+    border: 2px solid var(--header-name);
+    box-shadow: 0 3px 0 0 var(--header-name);
+    text-align: justify;
+    border-top: none;
+}
+.show{
+    display: block;
+}
+.showtwo{
+    display: block;
+}
+.showthree{
+    display: block;
+}
+.showfour{
+    display: block;
+}
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++MOBILE SCREEN MEDIA QUERY FOR THE ABOUT WEBPAGE++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 600px) {
+    .header-about{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-about{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-about{
+    width:90%;
+    }
+.nav-links-about a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+
+
+    /* HERO FOR THE ABOUT WEBPAGE */
+    .about-hero-container{
+        display: block;
+        margin: 100px auto 180px;
+        width: 100%;
+    }
+    .about-hero-imgs{
+        margin: 0 auto;
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+    #single-img{
+        width: 150px;
+        height: 230px;
+        top: 40px;
+        right: 0;
+        margin-right: 15px;
+    }
+    .double-img img{
+        width: 110px;
+        height: 140px;
+    }
+    .about-hero-contents{
+        left: 0;
+    }
+    .hero-texts{
+        margin-bottom: 20px;
+    }
+    .hero-texts h1{
+        font-size: 1.7rem;
+        font-family: "Short Stack", cursive;
+        font-weight: 400;
+        font-style: normal;
+          
+    }
+    .hero-texts p{
+        font-size: 1.2rem;
+    }
+    .dropdown-content p{
+        font-size: 1.1rem;
+    }
+}
+
+
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++ TABLET SCREEN MEDIA QUERY FOR THE ABOUT WEBPAGE++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+    .header-about{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-about{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-about{
+    width:90%;
+    }
+.nav-links-about a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+
+
+    /* HERO FOR THE ABOUT WEBPAGE */
+    .about-hero-container{
+        display: block;
+        margin: 100px auto 180px;
+        width: 100%;
+    }
+    .about-hero-imgs{
+        margin: 0 auto;
+        justify-content: center;
+        margin-bottom: 80px;
+    }
+    #single-img{
+        width: 150px;
+        height: 230px;
+        /* width: 350px; */
+        /* height: auto; */
+        top: 40px;
+        right: 0;
+        margin-right: 15px;
+    }
+    .double-img img{
+        width: 110px;
+        height: 140px;
+        /* width: 200px; */
+        /* height: auto; */
+    }
+    .about-hero-contents{
+        left: 0;
+    }
+    .hero-texts{
+        margin-bottom: 20px;
+    }
+    .hero-texts h1{
+        font-size: 3rem;
+    }
+    .hero-texts p{
+        font-size: 1.5rem;
+        padding: 0 20px;
+    }
+
+
+    /* THE DESCRIPTIONS */
+    .dropbtn, .dropbtntwo, .dropbtnthree, .dropbtnfour{
+        font-size: 1.5rem;
+        height: 70px;
+    }
+    .dropdown-content{
+        font-size: 1.5rem;
+        border: 2px solid var(--header-name);
+        box-shadow: 0 3px 0 0 var(--header-name);
+        box-shadow: none;
+    }
+}
+
+
+/* ===========================================================PORTFOLIO WEBPAGE======================================================== */
+.header-portfolio{
+    background-color: var(--header-color);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.header-name{
+    color: var(--header-name);
+    font-size: 0.87rem;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+}
+.header-links-portfolio{
+    position: absolute;
+    top: 40px;
+    left: 450px;
+}
+.header-links-portfolio a{
+    color: var(--header-name);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 50px;
+    font-weight: bold;
+}
+.header-links-portfolio :nth-child(3){
+    color: var(--header-links-about);
+}
+    .header-links-about :last-child{
+    margin-right: 0;
+}
+#icon{
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 330px;
+}
+#icon:hover{
+    height: 19px;
+}
+.header-contact-portfolio{
+    font-size: 1.1rem;
+    position: absolute;
+    top: 40px;
+    right: 200px;
+    transition: 0.5s;
+}
+.header-contact-portfolio a{
+    color: var(--header-name);
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    font-weight: bold;
+}
+.header-contact-portfolio:hover{
+    scale: 0.9;
+}
+
+
+
+/* MOBILE NAVIGATION BAR */
+.nav-portfolio{
+    display: none;
+    width: 100vw;
+    position: fixed;
+    bottom: 20px;
+    transition: all 0.5s ease-in-out 0s;
+}
+.nav-links-portfolio{
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--body-color);
+    border: 2px solid var(--header-name);
+    padding: 10px;
+    margin: 0 20px;
+}
+.nav-links-portfolio a i{
+    color: var(--mobile-nav);
+    background-color: var(--mobile-nav-bg);
+    padding:10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 0;
+}
+.nav-links-portfolio :nth-child(3) i{
+    background-color: var(--mobile-nav-links-visited);
+}
+
+
+/* HERO SECTION */
+#hportfolio{
+    margin: 170px 0 50px;
+    text-align: center;
+    font-size: 1.56rem;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    color: var(--header-name);
+}
+
+/* FIRST PROJECT SECTION */
+.project-container{
+    width: 65%;
+    margin: 0 auto;
+}
+#spsu-project{
+    display: none;
+}
+.project-card{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    margin: 1rem;
+    border: 2px solid var(--header-name);
+}
+
+.project-card_one{
+    opacity: 0;
+    transform: translateY(-100px);
+    transition: transform 3s linear, opacity 6s linear;
+}
+
+/* THE CLASS TARGET BELOW IS A CLASSLIST CREATED IN THE JAVASCRIPT */
+.animate_portfolio{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+
+/* PROJECT CARD TWO */
+.project-card_two{
+    opacity: 0;
+    scale: 0.9;
+    transition: scale 4s, opacity 6s;
+}
+
+.animate_portfolioTwo{
+    opacity: 1;
+    scale: 1;
+    transform: none;
+}
+
+
+
+/* PROJECT CARD FOUR */
+.project-card_four{
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 3s, opacity 6s;
+}
+
+
+
+.animate_portfolioFour{
+    opacity: 1;
+    transform: none;
+}
+
+
+
+
+
+.project-card img{
+    max-width: 100%;
+}
+.project-card h2{
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--header-name);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.project-card p{
+    text-align: center;
+    margin: 1rem 0;
+    color: var(--abum-sentence);
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 1.03rem;
+    line-height: 1.5;
+    font-weight: bold;
+}
+.project-card-btn{
+    text-decoration: none;
+    color: var(--abum-sentence);
+    display: inline-block;
+    padding: 10px;
+    margin: 0.5rem 0;
+    border: 2px solid #000;
+    box-shadow: 0px 3px 0px 0px var(--header-name);
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    transition: 0.5s ease-in-out;
+    display: none;
+}
+.project-card-btn:hover{
+    scale: 0.9;
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ MOBILE SCREEN MEDIA QUERY FOR THE PORTFOLIO WEPAGE+++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 600px) {
+    .header-portfolio{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-portfolio{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-portfolio{
+    width:90%;
+    }
+.nav-links-portfolio a i{
+    box-shadow: 2px 2px 0 0;
+    }
+    
+    
+    /* HERO SECTION */
+    #hportfolio{
+        /* margin: 170px 0 50px;
+        text-align: center;
+        font-size: 1.56rem;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        color: var(--header-name); */
+        margin: 100px 0 50px;
+    }
+    
+    /* FIRST PROJECT SECTION */
+    .project-container{
+        /* width: 65%;
+        margin: 0 auto; */
+        width: 90%;
+    }
+}
+
+
+
+/* ++++++++++++++++++++++++++++++++++++++++++++++++++++++ TABLET SCREEN MEDIA QUERY FOR THE PORTFOLIO WEPAGE+++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+    .header-portfolio{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-portfolio{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-portfolio{
+    width:90%;
+    }
+.nav-links-portfolio a i{
+    box-shadow: 2px 2px 0 0;
+    }
+    
+    
+    /* HERO SECTION */
+    #hportfolio{
+        margin: 100px 0 50px;
+        font-size: 2.3rem;
+    }
+    
+    /* FIRST PROJECT SECTION */
+    .project-container{
+        width: 90%;
+    }
+    .project-card h2{
+        font-size: 1.7rem;
+    }
+    .project-card p{
+        font-size: 1.4rem;
+    }
+    .project-card a{
+        /* display: block; */
+        font-size: 1.5rem;
+    }
+}
+
+
+
+
+
+
+
+/* =================================================================CONTACT ME WEBPAGE====================================================== */
+.contact-header{
+    background-color: var(--header-color);
+    height: 100px;
+    width: 100vw;
+    display: flex;
+    position: fixed;
+    top: 0;
+    z-index: 2;
+}
+.header-name{
+    color: var(--header-name);
+    font-size: 0.87rem;
+    position: absolute;
+    top: 30px;
+    left: 150px;
+}
+.header-links-contact{
+    position: absolute;
+    top: 40px;
+    left: 450px;
+}
+.header-links-contact a{
+    color: var(--header-name);
+    text-decoration: none;
+    font-size: 1.2rem;
+    margin-right: 50px;
+    font-weight: bold;
+}
+.header-links-contact :nth-child(4){
+    color: var(--header-links-about);
+}
+    .header-links-contact :last-child{
+    margin-right: 0;
+}
+#icon{
+    height: 20px;
+    cursor: pointer;
+    position: absolute;
+    top: 42px;
+    right: 330px;
+}
+#icon:hover{
+    height: 19px;
+}
+.header-contact-contact{
+    font-size: 1.1rem;
+    position: absolute;
+    top: 40px;
+    right: 200px;
+    transition: 0.5s;
+}
+.header-contact-contact a{
+    color: var(--header-name);
+    text-decoration: none;
+    padding: 10px;
+    border: 2px solid black;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    font-weight: bold;
+}
+.header-contact-contact:hover{
+    scale: 0.9;
+}
+
+
+
+/* MOBILE NAVIGATION BAR */
+.nav-contact{
+    display: none;
+    width: 100vw;
+    position: fixed;
+    bottom: 20px;
+    transition: all 0.5s ease-in-out 0s;
+}
+.nav-links-contact{
+    height: 50px;
+    align-items: center;
+    display: flex;
+    justify-content: space-evenly;
+    background-color: var(--body-color);
+    border: 2px solid var(--header-name);
+    padding: 10px;
+    margin: 0 20px;
+}
+.nav-links-contact a i{
+    color: var(--mobile-nav);
+    background-color: var(--mobile-nav-bg);
+    padding:10px;
+    border-radius: 50%;
+    box-shadow: 2px 2px 0 0;
+}
+.nav-links-contact :last-child i{
+    background-color: var(--mobile-nav-links-visited);
+}
+
+
+
+
+/* HERO SECTION FOR CONTACT ME WEBPAGE */
+.contact-container{
+    margin-top: 100px;
+    background-color: #0b493e;
+}
+.contact-proper{
+    display: flex;
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+}
+
+
+
+
+/* LEFT SIDE SECTION */
+.contact-handles{
+    width: 45%;
+    /* display: grid; */
+    align-items: center;
+    margin: 16.625rem 0 0;
+    opacity: 0;
+    transform: translateY(100px);
+    transition: transform 5s, opacity 5s;
+}
+
+/* THE CLASS TARGET BELOW IS THE CLASSLIST CREATED IN THE JAVASCRIPT */
+.animate_contactHandles{
+    opacity: 1;
+    transform: none;
+}
+
+
+.handles{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--header-name);
+    cursor: pointer;
+}
+.handles a{
+    margin: 1.5rem 1rem 0 0;
+    font-size: 1.25rem;
+    color: var(--header-name);
+    padding: 5px;
+    background: #af0202;
+    border: 2px solid #fff;
+}
+.mail{
+    margin-left: 1.3rem;
+}
+.mail a{
+    background-color: darkcyan;
+}
+.whatsapp{
+    margin-right: 1.5rem;
+}
+.whatsapp a{
+    background-color: darkgreen;
+}
+.handles h3{
+    margin-top: 1.5rem;
+    font-weight: bold;
+    font-family: cursive ;
+    font-size: 1.34rem;
+}
+.handles h3 a{
+    background: none;
+    border: none;
+    text-decoration: none;
+    color: #fff;
+}
+
+
+/* RIGHT SIDE SECTION */
+.contact-form{
+    width: 45%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    background-color: var(--body-color);
+    padding: 1rem;
+    margin-top: 3rem;
+    margin-bottom: 1rem;
+    z-index: 1;
+    opacity: 0;
+    scale: 0.5;
+    transition: scale 3s, opacity 6s;
+}
+
+
+/* THE CLASS TARGET BELOW IS THE CLASSLIST CREATED IN THE JAVASCRIPT FOR THE ANIMATION */
+.animate_contactForm{
+    opacity: 1;
+    scale: 1;
+}
+
+
+
+.contact-form h2{
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--header-name);
+    font-weight: bold;
+    font-size: 1.87rem;
+}
+.contact-form p{
+    text-align: center;
+    margin-bottom: 1rem;
+    color: var(--header-name);
+    font-size: 1.06rem;
+    font-family: cursive;
+}
+#below{
+    display: none;
+}
+.contact-form form input, .contact-form textarea{
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    resize: none;
+    outline: none;
+}
+.contact-form form input, .contact-form button{
+    border: 2px solid #000;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+.contact-form button{
+    padding: 10px;
+    margin: 0.5rem 0;
+    display: inline-block;
+    box-shadow: 0 3px 0 0 var(--header-name);
+    font-weight: bold;
+    background: var(--body-color);
+    color: var(--header-name);
+    transition: 0.5s ease-in-out;
+    cursor: pointer;
+}
+
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++ MOBILE SCREEN MEDIA QUERY FOR THE CONTACT WEBPAGE ++++++++++++++++++++++++++++++++++++++++++++++++ */
+@media only screen and (max-width: 600px) {
+    .contact-header{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-contact{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-contact{
+    width:90%;
+    }
+.nav-links-contact a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+    /* HERO SECTION FOR CONTACT ME WEBPAGE */
+    .contact-container{
+        margin-top: 60px;
+        padding: 10px;
+    }
+    .contact-proper{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    
+    
+    
+    
+    /* LEFT SIDE SECTION */
+    .contact-handles{
+        width: 100%;
+        margin-top: 0;
+    }
+    .mail{
+        margin-left: 0;
+    }
+    
+    
+    /* RIGHT SIDE SECTION */
+    .contact-form{
+        width: 100%;
+        padding: inherit;
+    }
+    .contact-form p{
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    #left{
+        display: none;
+    }
+    #below{
+        display: inline-block;
+    }
+    .contact-form form input, .contact-form textarea{
+        padding: 1.4rem;
+    }
+    .contact-form form input, .contact-form button{
+        border: 2px solid #000;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1rem;
+    }
+    .contact-form button{
+        padding: 1rem;
+    }
+}
+
+
+
+/* `````````````````````````````````````` TABLET SCREEN MEDIA QUERY FOR THE CONTACT WEBPAGE `````````````````````````````````````````````` */
+@media only screen and (max-width: 768px) and (min-width: 601px) {
+    .contact-header{
+        display: none;
+    }
+
+    /* MOBILE NAVIGATION BAR */
+.nav-contact{
+    display: block;
+    width: 100vw;
+    background-color: var(--body-color);
+    z-index: 2;
+    }
+.nav-links-contact{
+    width:90%;
+    }
+.nav-links-contact a i{
+    box-shadow: 2px 2px 0 0;
+    }
+
+    /* HERO SECTION FOR CONTACT ME WEBPAGE */
+    .contact-container{
+        margin-top: 60px;
+        padding: 10px;
+    }
+    .contact-proper{
+        flex-wrap: wrap;
+        flex-direction: column-reverse;
+        width: 100%;
+    }
+    
+    
+    
+    
+    /* LEFT SIDE SECTION */
+    .contact-handles{
+        width: 100%;
+        margin-top: 0;
+    }
+    .handles h3{
+        font-size: 1.7rem;
+    }
+    .mail{
+        margin-left: 0;
+    }
+    
+    
+    /* RIGHT SIDE SECTION */
+    .contact-form{
+        width: 100%;
+        padding: inherit;
+    }
+    .contact-form p{
+        font-size: 1.4rem;
+        line-height: 1.5;
+    }
+    #left{
+        display: none;
+    }
+    #below{
+        display: inline-block;
+    }
+    .contact-form form input, .contact-form textarea{
+        padding: 1.4rem;
+        font-size: 1.5rem;
+    }
+    .contact-form form input, .contact-form button{
+        border: 2px solid #000;
+        font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+        font-size: 1.5rem;
+    }
+    .contact-form button{
+        padding: 1rem;
+    }
+}
