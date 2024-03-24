@@ -352,22 +352,22 @@ body{
     box-shadow: 2px 2px 1px 1px var(--specialization-hover);
 }
 .html{
-    background-color: darkgoldenrod;
+    background-color: #836928;
 }
 .css{
-    background-color: #a17e49;
+    background-color: #0c4c5e;
 }
 .js{
-    background-color: #7a7200;
+    background-color: #504c12;
 }
 .python{
-    background-color: darkolivegreen;
+    background-color: #3f610d;
 }
 .git{
-    background-color: darkred;
+    background-color: #440b0b;
 }
 .word{
-    background-color: darkslateblue;
+    background-color: #153680;
 }
 .mobile{
     display: none;
