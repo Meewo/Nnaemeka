@@ -106,6 +106,12 @@ body{
 #icon:hover{
     height: 19px;
 }
+input[type="checkbox"]{
+    display: none;
+}
+#checkbox-id{
+    display: none;
+}
 .header-contact{
     font-size: 1.1rem;
     position: absolute;
@@ -243,7 +249,7 @@ body{
     justify-content: space-evenly;
     opacity: 0;
     transform: translateX(-50vw);
-    transition: transform 3s, opacity 5s;
+    transition: transform 2s, opacity 3s;
    
 }
 .first-triad :hover{
@@ -308,7 +314,7 @@ body{
 .first-specialization{
     opacity: 0;
     transform: scale(0.5);
-    transition: transform 3s, opacity 9s ;
+    transition: transform 2s, opacity 6s ;
 }
 
 /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
@@ -321,7 +327,7 @@ body{
 .second-specialization{
     opacity: 0;
     transform: translateY(100px);
-    transition: transform 3s linear;
+    transition: transform 2s linear;
 }
 
 /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
@@ -435,16 +441,15 @@ body{
     padding: 40px;
     opacity: 0;
     transform: translateY(100px);
-    transition: transform 3s linear, opacity 7s;
+    transition: transform 2s linear, opacity 7s;
 }
 
 /* THE CLASS BELOW IS THE CLASSLIST CREATED IN THE JAVASCRIPT FOR THE ANIMATION */
 .concern-imgs{
-    /* THERE IS ANOTHER TARGET OF THIS CLASS DOWNWARDS WHICH PERFORMED THE DESIN WORKS THIS IMEADIATE ONE IS SOLEY FOR ANIMATION.
+    /* THERE IS ANOTHER TARGET OF THIS CLASS DOWNWARDS WHICH PERFORMED THE DESIGN WORKS THIS IMEADIATE ONE IS SOLEY FOR ANIMATION.
     I DON'T WANT TO COMBINE THE PROPERTIES BEACUSE THE ANIMATION ONES NEEDS TO COME FIRST IN THE BRACE BEFORE PROPER FUNCTIONING.
     MEANWHILE, I CAN STILL COPY THE PROPERTIES OF THE SECOND TARGET AND PUT UNDER THE PROPERTIESOF THIS IMMEDIATE TARGET */
     opacity: 0;
-    /* transform: translateY(100px); */
     transition: opacity 7s;
 }
 .animate_concern{
@@ -630,7 +635,7 @@ footer h6{
     .first-specialization{
         opacity: 0;
         transform: scale(0.5);
-        transition: transform 3s, opacity 9s ;
+        transition: transform 2s, opacity 6s ;
     }
     
     /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */
@@ -643,7 +648,7 @@ footer h6{
     .second-specialization{
         opacity: 0;
         transform: scale(0.5);
-        transition: transform 3s, opacity 9s ;
+        transition: transform 2s, opacity 6s ;
     }
     
     /* THE CLASS BELOW IS AN ADDED CLASSLIST IN THE JAVASCRIPT */

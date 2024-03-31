@@ -1,31 +1,93 @@
-// FOR COLOR THEME TOGGLE
+// COLOR THEME TOGGLE FOR DESKTOP SCREEN
 
-var icon = document.getElementById("icon");
+document.addEventListener('DOMContentLoaded', function(){
+    const checkbox = document.getElementById('checkbox');
+    const chechboxState = localStorage.getItem('checkboxState');
 
-icon.onclick = function(){
-    document.body.classList.toggle("light-theme")
-    if(document.body.classList.contains("light-theme")){
-        icon.src = "moon.png";
-    }else{
-        icon.src = "sun.png"
+    if (chechboxState === 'checked'){
+        checkbox.checked = true;
+        document.body.classList.add("light-theme");
+        icon.src = "moon.png"; 
     }
-}
+
+    checkbox.addEventListener('change', function(){
+        var icon = document.getElementById("icon");
+        if (checkbox.checked){
+            localStorage.setItem('checkboxState','checked');
+            document.body.classList.add("light-theme");
+            icon.src = "moon.png"; 
+        } else {
+            localStorage.removeItem('checkboxState');
+            document.body.classList.remove("light-theme");
+            icon.src = "sun.png"; 
+        }
+    })
+})
+
+
+
+
+//THIS IS THE INITIAL COLOR THEME TOGGLE BEFORE MODIFICATION BY SAVIOTECH USING CHECKBOX 
+
+// var icon = document.getElementById("icon");
+
+// icon.onclick = function(){
+//     document.body.classList.toggle("light-theme")
+//     if(document.body.classList.contains("light-theme")){
+//         icon.src = "moon.png";
+//     }else{
+//         icon.src = "sun.png"
+//     }
+// }
 
 
 
 
 // COLOR THEME TOGGLE FOR MOBILE SCREENS
 
+document.addEventListener('DOMContentLoaded', function(){
+    const checkbox = document.getElementById('checkbox-id');
+    const chechboxState = localStorage.getItem('checkboxState');
+    
+
+    if (chechboxState === 'checked'){
+        var mobileicon = document.getElementById("mobileicon");
+        checkbox.checked = true;
+        document.body.classList.add("light-theme");
+        mobileicon.src = "moon.png"; 
+    }
+
+    checkbox.addEventListener('change', function(){
+        var mobileicon = document.getElementById("mobileicon");
+        
+        if (checkbox.checked){
+            localStorage.setItem('checkboxState','checked');
+            document.body.classList.add("light-theme");
+            mobileicon.src = "moon.png"; 
+        } else {
+            localStorage.removeItem('checkboxState');
+            document.body.classList.remove("light-theme");
+            mobileicon.src = "sun.png"; 
+        }
+    })
+})
+
+
+
+
+
+
+
 var mobileicon = document.getElementById("mobileicon");
 
-mobileicon.onclick = function(){
-    document.body.classList.toggle("light-theme")
-    if(document.body.classList.contains("light-theme")){
-        mobileicon.src = "moon.png";
-    }else{
-        mobileicon.src = "sun.png"
-    }
-}
+// mobileicon.onclick = function(){
+//     document.body.classList.toggle("light-theme")
+//     if(document.body.classList.contains("light-theme")){
+//         mobileicon.src = "moon.png";
+//     }else{
+//         mobileicon.src = "sun.png"
+//     }
+// }
 
 
 
